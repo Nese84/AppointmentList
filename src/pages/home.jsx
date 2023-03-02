@@ -4,20 +4,27 @@ import Doctors from "../components/Doctors"
 import { doctorData } from "../helper/data"
 import { appointmentData } from "../helper/data"
 
-const Home =()=>{
+const Home = () => {
+  const [doctors] = useState(doctorData)
+  const [appointments, setAppointments] = useState(appointmentData)
 
-    const [doctors, setDoctors] = useState([])
-
-    return(
-        <main className="text-center mt-2">
+  
+  console.log(appointments)
+  console.log(doctors)
+  return (
+    <main className="text-center mt-2">
       <h1 className="display-5 text-danger">CLARUS HOSPITAL</h1>
-      <Doctors doctors={doctors} setDoctors={setDoctors} />
-      
-      <AppointmentList/>
-      </main>
-    )
-
-
+      <Doctors
+        doctors={doctors}
+        appointments={appointments}
+        setAppointments={setAppointments}
+      />
+      <AppointmentList
+        appointments={appointments}
+        setAppointments={setAppointments}
+      />
+    </main>
+  )
 }
 
-export default Home;
+export default Home

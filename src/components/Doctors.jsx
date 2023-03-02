@@ -8,9 +8,11 @@ const Doctors = ({ doctors, appointments, setAppointments }) => {
   const [show, setShow] = useState(false)
   const [selectedDrName, setSelectedDrName] = useState("")
 
-
+  // const handleClose = () => setShow(false)
+  // const handleShow = () => setShow(true)
 
   const handleClick = (drName) => {
+    // handleShow()
     setShow(true)
     setSelectedDrName(drName)
   }
@@ -36,6 +38,7 @@ const Doctors = ({ doctors, appointments, setAppointments }) => {
           </Col>
         ))}
       </Row>
+      {/* <AddModal show={show} handleClose={handleClose} /> */}
       <AddModal
         show={show}
         handleClose={() => setShow(false)}
